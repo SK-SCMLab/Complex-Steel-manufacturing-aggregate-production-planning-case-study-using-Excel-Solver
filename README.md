@@ -33,3 +33,37 @@ This repository represents a comprehensive operations research case study at a s
 
 ---
 
+## ℹ️ Mathematical Optimization Model
+### Decision variables
+For each division i and product j:
+- Xᵢⱼ = Daily production quantity of product j in division i (metric tons)
+### Objective function (Total Scrap Minimization)
+-        Minimize: Σ(i,j,k) [Scrap_Rate_ijk * Xᵢⱼ]
+where k represents each operation in production sequence
+### CONSTRAINT FRAMEWORK
+#### Production Capacity Constraints: 
+-        ΣⱼXᵢⱼ ≤ Daily_Capacity_i ∀i
+#### Labour availability constraints:
+-        Σⱼ(Labor_hours_ijk * Xᵢⱼ) ≤ Available_Hours_ik ∀i,k
+#### Demand Fulfillment constraints:
+-        Xᵢⱼ ≥ Minimum_Demand_ij ∀i,j
+#### Non-negativity constraints:
+-        Xᵢⱼ ≥ 0 ∀i,j
+
+---
+
+## ♎️ Excel Solver Implementation
+### MODEL CONFIGURATION FOR EACH DIVISION
+#### Hot Rolling Division Excel Model
+- **Variables**: 4 (X_Hot_Rolled_Coils, X_Steel_Plates, X_Steel_Strips, X_Precision_Strips)
+- **Objective**: Minimize 0.1800 * X₁ + 0.2300 * X₂ + 0.1900 * X₃ + 0.2700 * X₄
+- **Constraints**: 9 Total (1 Capacity + 4 Labor + 4 Demand)
+- **Solver Method**: Simplex LP
+
+##### Implementation steps:
+1. *Input parameters setup*: Division info, products, operations, scrap rates matrix
+2. *Decision variables*: Production quantities to be optimized
+3. *Objective function*: SUMPRODUCT(scrap_coefficients, decision variables)
+4. *Constraints setup*: Capacity, labor and demand restrictions
+5. *Solver configuration*: Minimize objective function by changing decision variables
+6. *Result analysis*: Optimal production mix and scrap minimization can be achieved
