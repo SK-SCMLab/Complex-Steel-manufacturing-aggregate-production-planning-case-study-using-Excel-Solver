@@ -1,14 +1,15 @@
-# ☮️ Complex-Steel-manufacturing-aggregate-production-planning-case-study-using-Excel-Solver
+# ☮️ Complex-Steel-manufacturing-aggregate-production-planning-case-study-using-Excel-Solver (Simplex LP)
 This repository represents a comprehensive operations research case study at a steel production plant facility implementing aggregate production planning using Excel solver to minimise scrap generation across three specialised divisions. 
 
 ---
 
 ## 🪯 Case study Overview
+This case study provides a complete framework for implementing aggregate production planning in steel manufacturing with detailed Excel-model, step-by-step implementation guides and comprehensive documentation that is suitable for industrial application
 **Company Profile**: SteelMax Manufacturing
 **Total daily capacity**: 50 metric ton
 **Planning Horizon**: 30 days
 **Primary objective**: Minimize total scrap generation
-**Optimization tool**: Excel Solver
+**Optimization tool**: Excel Solver (Simplex LP)
 
 ---
 
@@ -67,3 +68,21 @@ where k represents each operation in production sequence
 4. *Constraints setup*: Capacity, labor and demand restrictions
 5. *Solver configuration*: Minimize objective function by changing decision variables
 6. *Result analysis*: Optimal production mix and scrap minimization can be achieved
+
+##### Iterative refinement process
+1. **Initial Solution generation**: Feasible starting point meeting all constraints
+2. **Constraint validation**: Verify capacity, labor, and demand restrictions verified
+3. **Objective improvement**: Iterative scrap minimization through variable adjustment
+4. **Sensitivity analysis**: Test solution robustness to parameter changes
+5. **Final verification**: Validate practical implementability in production environment
+
+---
+
+## ♻️ Requirements
+- Microsoft Excel 2019 or later
+- Knowledge on Excel Simplex LP solver
+- Steel manufacturing process knowledge
+
+---
+
+*"Information is oil of 21st century, and analytics is the combustion engine" - Peter Soondergard*
